@@ -17,7 +17,7 @@ public interface APIInterface {
 
 
 
-    @GET("0dfe31fb-af2a-432d-9af5-c4e6fb21ef27")
+    @GET("ce1943d6-41e4-4d8d-8509-e9cb6033f53f")
     Call<Details> GetList();
 
 

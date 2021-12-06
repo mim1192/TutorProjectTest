@@ -44,13 +44,14 @@ public class CustomPagerAdapter extends PagerAdapter {
         TextView height = itemView.findViewById(R.id.height);
 
 
-        id.setText(modelObject.getId().toString());
-        name.setText(modelObject.getName().toString());
-        date.setText(modelObject.getDate().toString());
-        classis.setText(modelObject.getClass_().toString());
-        height.setText(modelObject.getHeight().toString());
+        id.setText(modelObject.getId());
+        name.setText(modelObject.getName());
+        date.setText(modelObject.getDate());
+        classis.setText(modelObject.getClass_());
+        height.setText(modelObject.getHeight());
 
 
+        collection.addView(itemView);
         return itemView;
     }
 
@@ -68,7 +69,6 @@ public class CustomPagerAdapter extends PagerAdapter {
     public int getCount() {
         return list.size();
     }
-
 
 
 }

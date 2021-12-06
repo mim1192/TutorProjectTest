@@ -23,14 +23,14 @@ class MainActivity : AppCompatActivity() {
         inIt()
         var db_tables: DBTables? = null
         db_tables = DBTables(this@MainActivity)
-        if (db_tables.retrieveDetails() != null && db_tables.retrieveDetails()
-                .get(0).name != null
+        var list = db_tables.retrieveDetails()
+        if (list != null && list.size > 0
         ) {
 
 
             val adapter = CustomPagerAdapter(
                 this@MainActivity,
-                db_tables.retrieveDetails() as ArrayList<Detail>?,
+                list as ArrayList<Detail>?,
 
                 )
             view_pager.setAdapter(adapter)

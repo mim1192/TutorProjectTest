@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/TutorProjectTest/app/src/main/res/drawable-v24/background_splash.xml" value="0.19375" />
         <entry key="..\:/TutorProjectTest/app/src/main/res/layout/activity_main.xml" value="0.128125" />
+        <entry key="..\:/TutorProjectTest/app/src/main/res/layout/activity_splash.xml" value="0.16354166666666667" />
         <entry key="..\:/TutorProjectTest/app/src/main/res/layout/pager_item.xml" value="0.33" />
       </map>
     </option>

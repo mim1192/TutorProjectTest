@@ -3,184 +3,176 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:layout_gravity="center"
+    android:background="#45123478"
+    android:gravity="center"
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="5dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:weightSum="2">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="3dp"
-                android:weightSum="2">
+                android:text="@string/name"
+                android:textColor="@color/main_color"
+                android:textStyle="bold"></TextView>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/name"
-                    android:textColor="@color/main_color"
-                    android:textStyle="bold"></TextView>
-
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/name"
-                    android:textColor="@color/main_color"
-                    android:textStyle="bold"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="3dp"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/classis"
-                    android:textColor="@color/main_color"
-                    android:textStyle="bold"></TextView>
-
-                <TextView
-                    android:id="@+id/classis"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/name"
-                    android:textColor="@color/main_color"
-                    android:textStyle="bold"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="3dp"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/date"
-                    android:textColor="@color/main_color"
-                    android:textStyle="bold"></TextView>
-
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/name"
-                    android:textColor="@color/main_color"
-                    android:textStyle="bold"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="3dp"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/height"
-                    android:textColor="@color/main_color"
-                    android:textStyle="bold"></TextView>
-
-                <TextView
-                    android:id="@+id/height"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-
-                    android:textColor="@color/main_color"
-                    android:textStyle="bold"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="3dp"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/id"
-                    android:textColor="@color/main_color"
-                    android:textStyle="bold"></TextView>
-
-                <TextView
-                    android:id="@+id/id"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/name"
-                    android:textColor="@color/main_color"
-                    android:textStyle="bold"></TextView>
-            </LinearLayout>
+                android:text="@string/name"
+                android:textColor="@color/black"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/classis"
+                android:textColor="@color/main_color"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/classis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/date"
+                android:textColor="@color/main_color"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/height"
+                android:textColor="@color/main_color"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/height"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:textColor="@color/black"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/id"
+                android:textColor="@color/main_color"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>
