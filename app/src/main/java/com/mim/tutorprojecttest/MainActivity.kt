@@ -3,8 +3,11 @@ package com.mim.tutorprojecttest
 import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.viewpager.widget.ViewPager
+import com.mim.tutorprojecttest.adapters.CustomPagerAdapter
 import com.mim.tutorprojecttest.api.APIClient
 import com.mim.tutorprojecttest.api.APIInterface
+import com.mim.tutorprojecttest.classes.Detail
 import com.mim.tutorprojecttest.classes.Details
 import com.mim.tutorprojecttest.db.DBTables
 import retrofit2.Call
@@ -13,11 +16,27 @@ import retrofit2.Response
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var view_pager: ViewPager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         inIt()
+        var db_tables: DBTables? = null
+        db_tables = DBTables(this@MainActivity)
+        if (db_tables.retrieveDetails() != null && db_tables.retrieveDetails()
+                .get(0).name != null
+        ) {
 
+
+            val adapter = CustomPagerAdapter(
+                this@MainActivity,
+                db_tables.retrieveDetails() as ArrayList<Detail>?,
+
+                )
+            view_pager.setAdapter(adapter)
+
+        } else
+            getList()
 
     }
 
@@ -29,22 +48,28 @@ class MainActivity : AppCompatActivity() {
         val apiInterfaceJava: APIInterface
         apiInterfaceJava = APIClient.getClient().create(APIInterface::class.java)
 
-        val call: Call<ArrayList<Details?>> =
+        val call: Call<Details> =
             apiInterfaceJava.GetList()
 
-        call.enqueue(object : Callback<ArrayList<Details?>?> {
+        call.enqueue(object : Callback<Details?> {
             override fun onResponse(
-                call: Call<ArrayList<Details?>?>,
-                response: Response<ArrayList<Details?>?>
+                call: Call<Details?>,
+                response: Response<Details?>
             ) {
                 var db_tables: DBTables? = null
                 db_tables = DBTables(this@MainActivity)
-                db_tables.insertDetails(response.body())
+                db_tables.insertDetailsComplete(response.body()!!.details as ArrayList<Detail>?)
                 progressDialog!!.dismiss()
+                val adapter = CustomPagerAdapter(
+                    this@MainActivity,
+                    db_tables.retrieveDetails() as ArrayList<Detail>?,
+
+                    )
+                view_pager.setAdapter(adapter)
             }
 
             override fun onFailure(
-                call: Call<ArrayList<Details?>?>,
+                call: Call<Details?>,
                 t: Throwable
             ) {
 
@@ -55,6 +80,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun inIt() {
+        view_pager = findViewById(R.id.view_pager)
+
 
     }
 }

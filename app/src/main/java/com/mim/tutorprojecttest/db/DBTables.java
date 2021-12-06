@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 
+import com.mim.tutorprojecttest.classes.Detail;
 import com.mim.tutorprojecttest.classes.Details;
 
 import org.json.JSONArray;
@@ -66,14 +67,14 @@ public class DBTables extends SQLiteOpenHelper {
         Log.e("in onUpgrade", "after upgrading db");
     }
 
-    public void insertDetails(Details item) {
+    public void insertDetails(Detail item) {
         Log.e("in the ", " populate users");
         SQLiteDatabase db = this.getWritableDatabase();
         //  db.execSQL("delete from " + TABLE_SYNC);
         ContentValues values = new ContentValues();
         values.put(id, item.getId());
         values.put(name, item.getName());
-        values.put(classis, item.getClassis());
+        values.put(classis, item.getClass_());
         values.put(date, item.getDate());
         values.put(height, item.getHeight());
 
@@ -84,16 +85,16 @@ public class DBTables extends SQLiteOpenHelper {
 
     }
 
-    public void insertDetails(ArrayList<Details> details) {
+    public void insertDetailsComplete(ArrayList<Detail> details) {
         Log.e("in the ", " populate users");
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("delete from " + TABLE_DETAILS);
         ContentValues values = new ContentValues();
         for (int i = 0; i < details.size(); i++) {
-            Details item = details.get(i);
+            Detail item = details.get(i);
             values.put(id, item.getId());
             values.put(name, item.getName());
-            values.put(classis, item.getClassis());
+            values.put(classis, item.getClass_());
             values.put(date, item.getDate());
             values.put(height, item.getHeight());
             db.insert(TABLE_DETAILS, null, values);
@@ -103,8 +104,8 @@ public class DBTables extends SQLiteOpenHelper {
 
     }
 
-    public List<Details> retrieveDetails() {
-        List<Details> userInfo = new ArrayList<>();
+    public List<Detail> retrieveDetails() {
+        List<Detail> userInfo = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery = "SELECT * FROM " + TABLE_DETAILS;
@@ -112,10 +113,10 @@ public class DBTables extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
 
-                Details userItem = new Details();
+                Detail userItem = new Detail();
                 userItem.setId(cursor.getString(0));
                 userItem.setName(cursor.getString(1));
-                userItem.setClassis(cursor.getString(2));
+                userItem.setClass_(cursor.getString(2));
                 userItem.setDate(cursor.getString(3));
                 userItem.setHeight(cursor.getString(4));
                 userInfo.add(userItem);

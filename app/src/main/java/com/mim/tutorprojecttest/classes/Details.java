@@ -1,50 +1,24 @@
+
 package com.mim.tutorprojecttest.classes;
 
+import java.util.List;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+
 public class Details {
-    String name;
-    String classis;
-    String date;
 
-    public String getName() {
-        return name;
+    @SerializedName("details")
+    @Expose
+    private List<Detail> details = null;
+
+    public List<Detail> getDetails() {
+        return details;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDetails(List<Detail> details) {
+        this.details = details;
     }
 
-    public String getClassis() {
-        return classis;
-    }
-
-    public void setClassis(String classis) {
-        this.classis = classis;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getHeight() {
-        return height;
-    }
-
-    public void setHeight(String height) {
-        this.height = height;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    String height;
-    String id;
 }

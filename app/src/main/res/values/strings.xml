@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">TutorProjectTest</string>
     <string name="searching">Fetching data</string>
+    <string name="name">Name</string>
+    <string name="classis">Class</string>
+    <string name="date">Date</string>
+    <string name="height">Height</string>
+    <string name="id">ID</string>
 </resources>
