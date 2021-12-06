@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TutorProjectTest</string>
+    <string name="searching">Fetching data</string>
 </resources>
